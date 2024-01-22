@@ -1,8 +1,16 @@
+---
+const pages = ["Home", "About", "Projects", "Contact"];
+---
 <header class="flex justify-center items-center py-3 w-[90vw] lg:w-[1120px]">
 	<nav class="flex flex-row gap-x-10 opacity-80">
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/projects">Projects</a>
-		<a href="/contact">Contact</a>
+		{
+			pages.map((page, index) => {
+				return (
+					<a href={ "/#" + page.toLowerCase() }>
+						{page}
+					</a>
+				);
+			})
+		}
 	</nav>
 </header>
