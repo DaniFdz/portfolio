@@ -1,16 +1,47 @@
 ---
-const pages = ["Home", "About", "Projects", "Contact"];
+const pages = ["Experience", "Projects", "About", "Contact"];
 ---
-<header class="flex justify-center items-center py-3 w-[90vw] lg:w-[1120px]">
-	<nav class="flex flex-row gap-x-10 opacity-80">
-		{
-			pages.map((page, index) => {
-				return (
-					<a href={ "/#" + page.toLowerCase() }>
-						{page}
-					</a>
-				);
-			})
-		}
-	</nav>
+<header
+  class={`
+    flex justify-center items-center
+    mx-auto
+    py-5
+    sticky top-0
+    w-full xl:w-[1120px]
+    z-10
+  `}
+>
+  <nav
+    class={`
+      border border-black rounded-full
+      px-3 py-1
+      flex flex-row items-center
+      bg-neutral-200 dark:bg-black/50
+      backdrop-blur-2xl
+    `}
+  >
+  {pages.map(page => (
+    <a
+      class="hover:bg-white/10 rounded-full px-2 sm:px-3 transition text-sm sm:text-base"
+			href={ "/#" + page.toLowerCase() }>{ page }</a
+    >
+  ))}
+  </nav>
 </header>
+  
+<script>
+  const $navAElements: Element[] = [...document.querySelectorAll('header nav a')]
+
+  window.addEventListener('scroll', () => {
+    $navAElements.forEach(a => {
+      const selectionForSection = a.getAttribute('href')?.substring(1)
+      const sectionElement: HTMLDivElement | null = document.querySelector(selectionForSection || '')
+
+      if(!sectionElement) return
+      const selectionTop = sectionElement.offsetTop - 150
+      if(window.scrollY <= selectionTop) return
+      $navAElements.forEach(aToRemove => aToRemove.classList.remove('bg-white/15'))
+      a.classList.add('bg-white/15')
+    })
+  })
+</script>
