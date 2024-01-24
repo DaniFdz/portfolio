@@ -1,7 +1,54 @@
 ---
-import ExperienceItem from '@/components/ExperienceItem.astro'
+import ExperienceItem from "@/components/ExperienceItem.astro";
+import Skill from "@/components/Skill.astro";
+import BriefcaseIcon from "@/components/icons/Briefcase.astro";
 ---
-<ol class="relative border-s border-gray-700 dark:border-gray-400 mt-6">                  
-	<ExperienceItem date="12" title="Title" description="Description"/>
-</ol>
 
+<div
+	class="flex flex-col items-left px-4 py-3 rounded-lg bg-white dark:bg-black bg-[radial-gradient(#e5e7eb_1px,#f3f6ff_1px)] dark:bg-[radial-gradient(#ffffff20_1px,#00091d_1px)] bg-[size:30px_30px]"
+>
+	<div
+		class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"
+	>
+	</div>
+	<h2 class="text-2xl flex flex-row gap-1.5 items-center">
+		<BriefcaseIcon /> Work Experience
+	</h2>
+	<ol class="relative border-s border-gray-700 dark:border-gray-400 mt-6">
+		<ExperienceItem
+			date="2021-2023"
+			title="Software Technician at UC3M Social Robotics Lab"
+		>
+			<p
+				class="mb-4 text-base font-normal text-gray-700 dark:text-gray-400"
+			>
+				Developed a full-stack web application with Django, including
+				the creation and management of MySQL and Nextcloud databases,
+				and the implementation of security measures in an Ubuntu-based
+				environment, virtualized through Docker. Also involved in tasks
+				using ROS with devices like Raspberry Pi and Arduino.
+			</p>
+			<span
+				slot="skills"
+				class="flex flex-row flex-wrap gap-x-3 gap-y-2 mt-1"
+			>
+				<Skill category="Programming">Python</Skill>
+				<Skill category="Programming">Django</Skill>
+				<Skill category="Programming">Bash</Skill>
+				<Skill category="Programming">HTML</Skill>
+				<Skill category="Programming">CSS</Skill>
+				<Skill category="Programming">JavaScript</Skill>
+				<Skill category="Programming">Arduino</Skill>
+				<Skill category="Other">UI/UX</Skill>
+				<Skill category="Other">Git</Skill>
+				<Skill category="Other">Docker</Skill>
+				<Skill category="Other">MySQL</Skill>
+				<Skill category="Other">Nextcloud</Skill>
+				<Skill category="Other">ROS</Skill>
+				<Skill category="Soft Skills">Team Work</Skill>
+				<Skill category="Soft Skills">Project Management</Skill>
+				<Skill category="Soft Skills">Critical Thinking</Skill>
+			</span>
+		</ExperienceItem>
+	</ol>
+</div>

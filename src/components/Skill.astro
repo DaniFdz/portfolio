@@ -1,0 +1,23 @@
+---
+interface Props {
+	category: "Programming" | "Soft Skills" | "Other";
+}
+
+const { category } = Astro.props;
+---
+
+<span
+	class={category === "Programming"
+		? `bg-purple-100 text-purple-800 
+			text-xs font-medium me-2 px-2.5 py-0.5 rounded 
+			dark:text-purple-500 border border-purple-400`
+		: category === "Soft Skills"
+			? `bg-pink-100 text-pink-800 
+			text-xs font-medium me-2 px-2.5 py-0.5 rounded 
+			dark:text-pink-500 border border-pink-400`
+			: `bg-yellow-100 text-yellow-800 
+			text-xs font-medium me-2 px-2.5 py-0.5 rounded 
+			dark:text-yellow-600 border border-yellow-300`}
+>
+	<slot />
+</span>
