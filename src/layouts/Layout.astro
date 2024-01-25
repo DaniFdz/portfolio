@@ -12,9 +12,6 @@ const { title } = Astro.props;
 <!doctype html>
 <html
 	lang="es"
-	x-data="{darkMode: localStorage.getItem('darkMode')}"
-	x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
-	x-bind:data-theme="darkMode"
 >
 	<!-- <html class="dark" lang="es"> -->
 	<head>
@@ -39,6 +36,18 @@ const { title } = Astro.props;
 			<slot />
 		</main>
 	</body>
+
+	<script is:inline>
+		const isDarkMode = localStorage.getItem("darkMode") ?? "dark";
+		if (isDarkMode === "dark") {
+			document.documentElement.classList.remove("light")
+			document.documentElement.classList.add("dark");
+		}
+		else {
+			document.documentElement.classList.remove("dark")
+			document.documentElement.classList.add("light");
+		}
+	</script>
 </html>
 <style is:global>
 	:root {
