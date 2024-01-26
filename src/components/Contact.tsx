@@ -1,5 +1,4 @@
 import { useState, type TargetedEvent } from 'preact/compat'
-import process from 'process'
 import emailjs from "@emailjs/browser";
 import ContactIcon from "@/components/icons/ContactIcon"
 import LoadingIcon from '@/components/icons/LoadingIcon';
@@ -24,10 +23,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.VITE_EMAIL_SERVICE_ID??"",
-        process.env.VITE_EMAIL_TEMPLATE_ID??"",
+        import.meta.env.PUBLIC_VITE_EMAIL_SERVICE_ID??"",
+        import.meta.env.PUBLIC_VITE_EMAIL_TEMPLATE_ID??"",
         form,
-        process.env.VITE_EMAIL_PUBLIC_KEY??""
+        import.meta.env.PUBLIC_VITE_EMAIL_PUBLIC_KEY??""
       )
       .then(
         () => {
