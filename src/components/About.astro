@@ -1,0 +1,51 @@
+---
+import InfoIcon from "@/components/icons/Info.astro";
+
+const personalImageAlt = "Daniel Fernández beep illustration";
+---
+
+<h2
+  class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/90"
+>
+  <InfoIcon class="size-7" />
+  Sobre mi
+</h2>
+<article class="flex flex-row gap-8 justify-center items-center">
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-400 [&>p>strong]:font-semibold text-pretty"
+  >
+    <p>
+      I'm an enthusiastic and dedicated <strong
+        >Computer Engineering student at the University of Carlos III of Madrid</strong
+      >, with a passion for staying at the forefront of technology since I was
+      15, when I started to learn coding video games. Since then, I have been
+      learning and improving my skills in different areas of software
+      development, from <strong>web development to low-level programming</strong
+      >.
+    </p>
+
+    <p>
+      My passion for technology has led me to be a self-taught person, <strong
+        >always looking for new challenges and learning new things through CTF's</strong
+      >. This has allowed me to acquire a wide range of skills, from <strong
+        >algorithmic thinking, problem solving and cybersecurity.</strong
+      >
+    </p>
+
+    <p>
+      Currently <strong>expanding my skill set with Rust</strong>, a language
+      that aligns with my commitment to performance and safety, and <strong
+        >delving into the realm of Nix for robust and reproducible system
+        configurations</strong
+      >.
+    </p>
+  </div>
+
+  <div class="size-full">
+    <img
+      src="/me.svg"
+      class="scale-x-[-1] hidden md:block"
+      alt={personalImageAlt}
+    />
+  </div>
+</article>

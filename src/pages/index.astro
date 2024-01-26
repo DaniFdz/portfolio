@@ -4,6 +4,7 @@ import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import Experience from "@/components/Experience.astro";
 import Contact from "@/components/Contact";
+import About from "@/components/About.astro";
 ---
 
 <Layout title="DaniFdz's Portfolio - Full-Stack Developer">
@@ -12,6 +13,9 @@ import Contact from "@/components/Contact";
 	</SectionContainer>
 	<SectionContainer title="experience">
 		<Experience />
+	</SectionContainer>
+	<SectionContainer title="about">
+		<About client />
 	</SectionContainer>
 	<SectionContainer title="contact">
 		<Contact client:visible />
