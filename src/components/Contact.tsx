@@ -24,10 +24,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.VITE_EMAIL_SERVICE_ID,
-        process.env.VITE_EMAIL_TEMPLATE_ID,
+        process.env.VITE_EMAIL_SERVICE_ID??"",
+        process.env.VITE_EMAIL_TEMPLATE_ID??"",
         form,
-        process.env.VITE_EMAIL_PUBLIC_KEY
+        process.env.VITE_EMAIL_PUBLIC_KEY??""
       )
       .then(
         () => {
