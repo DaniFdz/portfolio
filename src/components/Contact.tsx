@@ -19,6 +19,22 @@ const Contact = () => {
 
   const handleSubmit = (e: Event) => {
     e.preventDefault();
+
+    if (form.from_name === "") {
+      setMessage({ text: "Please enter your name.", color: "text-red-500" });
+      return;
+    }
+
+    if (form.from_email === "") {
+      setMessage({ text: "Please enter your email address.", color: "text-red-500" });
+      return;
+    }
+
+    if (form.message === "") {
+      setMessage({ text: "Please enter your message.", color: "text-red-500" });
+      return;
+    }
+
     setLoading(true);
 
     emailjs
