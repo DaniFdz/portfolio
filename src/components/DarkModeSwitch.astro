@@ -39,10 +39,7 @@
     </label>
 </div>
 <script is:inline>
-    let darkMode =
-        localStorage.getItem("darkMode") || "prefers-color-scheme"
-            ? "dark"
-            : "light";
+    let darkMode = localStorage.getItem("darkMode") ?? "dark";
     document.documentElement.classList.add(darkMode);
     document.getElementById("light-switch").addEventListener("change", () => {
         darkMode = darkMode == "dark" ? "light" : "dark";
